@@ -36,7 +36,7 @@ const withMfePlugin = mfePlugin({
 ```
 
 ### Common areas
-Despite the fact that each portion of the application is owned by a different team, there are common areas in the hole app that need to be shared. Module Federation allows us to achieve that by exposing some methods or components and allowing child apps to consume them.
+Despite the fact that each portion of the application is owned by a different team, there are common areas in the whole app that need to be shared. Module Federation allows us to achieve that by exposing some methods or components and allowing child apps to consume them.
 This example uses [@module-federation/nextjs-mf](https://github.com/module-federation/universe/tree/main/packages/nextjs-mf).
 To expose some parts of the host app, you can set it up like this.
 
@@ -79,7 +79,7 @@ This will start the host and the child app locally. You can navigate through htt
 ### Product development
 You can run the commands above and just start coding too!
 
-But if you are a product developer you probably don't care that much about the common parts of the app. You just want to log into the app, go to your own path and code. To do that, you need to setup the URL of the remote deployed app in your .env file
+But if you are a product developer you probably don't care that much about the common parts of the app. You just want to login to the app, go to your own path and code. To do that, you need to setup the URL of the remote deployed app in your .env file
 ```bash
 # .env file
 HOST_URL='https://mf-host-chi.vercel.app'
