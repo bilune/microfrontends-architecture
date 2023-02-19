@@ -1,0 +1,33 @@
+{
+  "name": "mf-1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev2": "next dev -p 3001",
+    "dev": "concurrently \"next dev -p 80\" \"local-ssl-proxy --source 443 --target 80\"",
+    "build": "next build",
+    "start": "concurrently \"next start -p 80\" \"local-ssl-proxy --source 443 --target 80\"",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@auth0/nextjs-auth0": "^2.2.1",
+    "@types/node": "18.13.0",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.10",
+    "eslint": "8.34.0",
+    "eslint-config-next": "13.1.6",
+    "next": "12.2.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "4.9.5",
+    "webpack": "^5.75.0"
+  },
+  "devDependencies": {
+    "@module-federation/nextjs-mf": "^6.1.3",
+    "autoprefixer": "^10.4.13",
+    "concurrently": "^7.6.0",
+    "local-ssl-proxy": "^1.3.0",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.7"
+  }
+}

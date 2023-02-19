@@ -1,0 +1,17 @@
+{
+  "name": "microfronts",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"cd packages/host; npm run dev\" \"cd packages/mf-1; npm run dev\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "dependencies": {}
+}
