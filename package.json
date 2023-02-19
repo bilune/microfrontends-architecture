@@ -8,7 +8,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently \"cd packages/host; npm run dev\" \"cd packages/mf-1; npm run dev\""
+    "dev": "concurrently \"yarn --cwd packages/host dev:https\" \"cd packages/mf-1; npm run dev\""
   },
   "devDependencies": {
     "concurrently": "^7.6.0"

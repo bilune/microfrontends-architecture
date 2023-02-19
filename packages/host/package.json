@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
+    "dev:https": "concurrently \"next dev -p 80\" \"local-ssl-proxy --source 443 --target 80\"",
     "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint"
@@ -23,6 +24,7 @@
     "webpack": "^5.75.0"
   },
   "devDependencies": {
+    "next-federation": "1.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
