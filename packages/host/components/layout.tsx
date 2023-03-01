@@ -8,6 +8,7 @@ import useUser from "@/utils/useUser";
 const prefetch = false;
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
+  const route = process.env.NEXT_PUBLIC_HOST || '';
   return (
     <div>
       <UserProvider>
@@ -42,7 +43,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
             <ul className={styles.list}>
               <li>
                 <Link
-                  href="https://dev.microfronts.com/"
+                  href={`${route}/`}
                   className={styles.listItem}
                   prefetch={prefetch}
                 >
@@ -61,7 +62,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
               </li>
               <li>
                 <Link
-                  href="https://dev.microfronts.com/mf-1"
+                  href={`${route}/mf-1`}
                   className={styles.listItem}
                   prefetch={prefetch}
                 >
@@ -79,7 +80,7 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
               </li>
               <li>
                 <Link
-                  href="https://dev.microfronts.com/mf-1/subpage"
+                  href={`${route}/mf-1/subpage`}
                   className={styles.listItem}
                   prefetch={prefetch}
                 >
