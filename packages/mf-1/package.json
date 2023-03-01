@@ -16,18 +16,18 @@
     "@types/react-dom": "18.0.10",
     "eslint": "8.34.0",
     "eslint-config-next": "13.1.6",
-    "next": "12.2.2",
+    "next": "^13.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "4.9.5",
     "webpack": "^5.75.0"
   },
   "devDependencies": {
-    "next-federation": "1.0.0",
     "@module-federation/nextjs-mf": "^6.1.3",
     "autoprefixer": "^10.4.13",
     "concurrently": "^7.6.0",
     "local-ssl-proxy": "^1.3.0",
+    "next-federation": "1.0.0",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7"
   }

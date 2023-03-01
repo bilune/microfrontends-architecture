@@ -2,7 +2,10 @@ import React, { FC, ReactNode } from "react";
 import styles from "./layout.module.css";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import { useRouter } from "next/router";
-import useUser from '@/utils/useUser';
+import Link from "next/link";
+import useUser from "@/utils/useUser";
+
+const prefetch = false;
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   return (
@@ -38,7 +41,11 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
           <div className={styles.container}>
             <ul className={styles.list}>
               <li>
-                <a href="#" className={styles.listItem}>
+                <Link
+                  href="https://dev.microfronts.com/"
+                  className={styles.listItem}
+                  prefetch={prefetch}
+                >
                   <svg
                     aria-hidden="true"
                     className={styles.icon}
@@ -49,11 +56,15 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
                     <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z" />
                     <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z" />
                   </svg>
-                  <span className={styles.listItemContent}>Dashboard</span>
-                </a>
+                  <span className={styles.listItemContent}>Host</span>
+                </Link>
               </li>
               <li>
-                <a href="#" className={styles.listItem}>
+                <Link
+                  href="https://dev.microfronts.com/mf-1"
+                  className={styles.listItem}
+                  prefetch={prefetch}
+                >
                   <svg
                     aria-hidden="true"
                     className={styles.icon}
@@ -63,12 +74,15 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
                   >
                     <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
                   </svg>
-                  <span className={styles.listItemContent}>Kanban</span>
-                  <span className={styles.listItemBadge}>Pro</span>
-                </a>
+                  <span className={styles.listItemContent}>MF 1</span>
+                </Link>
               </li>
               <li>
-                <a href="#" className={styles.listItem}>
+                <Link
+                  href="https://dev.microfronts.com/mf-1/subpage"
+                  className={styles.listItem}
+                  prefetch={prefetch}
+                >
                   <svg
                     aria-hidden="true"
                     className={styles.icon}
@@ -79,9 +93,8 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
                     <path d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z" />
                     <path d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z" />
                   </svg>
-                  <span className={styles.listItemContent}>Inbox</span>
-                  <span className={styles.listItemBadge}>3</span>
-                </a>
+                  <span className={styles.listItemContent}>MF1 Subpage</span>
+                </Link>
               </li>
               <li>
                 <a href="#" className={styles.listItem}>
@@ -120,6 +133,11 @@ const Layout: FC<{ children: ReactNode }> = ({ children }) => {
                 </a>
               </li>
             </ul>
+            <hr style={{ margin: "1rem 0" }} />
+            <li className={styles.listItem}>
+              Soy {process.env.NEXT_PUBLIC_APP_NAME} desde{" "}
+              {process.env.NODE_ENV === "development" ? "local" : "remoto"}
+            </li>
             <BottomNav />
           </div>
         </aside>

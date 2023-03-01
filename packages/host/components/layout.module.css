@@ -7,7 +7,7 @@
 }
 
 .container {
-  @apply h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 flex flex-col;
+  @apply h-full px-3 py-4 overflow-y-auto bg-red-900 flex flex-col;
 }
 
 .list {
@@ -15,7 +15,7 @@
 }
 
 .listItem {
-  @apply flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700;
+  @apply flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-red-800;
 }
 
 .listItemContent {
@@ -31,5 +31,5 @@
 }
 
 .mainContainer {
-  @apply p-4 sm:ml-64;
+  @apply sm:ml-64;
 }
