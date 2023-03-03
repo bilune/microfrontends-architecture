@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import useUser from "@/utils/useUser";
 
-const prefetch = false;
+const prefetch = process.env.NODE_ENV === 'production';
 
 const Layout: FC<{ children: ReactNode }> = ({ children }) => {
   const route = process.env.NEXT_PUBLIC_HOST || '';
