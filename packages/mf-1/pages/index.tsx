@@ -3,7 +3,7 @@ import Head from "next/head";
 // @ts-ignore
 import useUser from "host/useUser";
 
-export default function Home() {
+export default function Home({ now }: { now: string }) {
   const { user, error, isLoading } = useUser();
   return (
     <>

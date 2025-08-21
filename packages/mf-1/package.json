@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev -p 3001",
-    "dev:https": "concurrently \"next dev -p 80\" \"local-ssl-proxy --source 443 --target 80\"",
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_EXTRA_CA_CERTS=\"$(mkcert -CAROOT)/rootCA.pem\" next dev -p 3001",
+    "dev:https": "concurrently \"NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_EXTRA_CA_CERTS=\\\"$(mkcert -CAROOT)/rootCA.pem\\\" next dev -p 80\" \"local-ssl-proxy --source 443 --target 80 --key ../../certs/localhost-key.pem --cert ../../certs/localhost-cert.pem\"",
     "build": "next build",
-    "start": "concurrently \"next start -p 80\" \"local-ssl-proxy --source 443 --target 80\"",
+    "start": "concurrently \"NODE_TLS_REJECT_UNAUTHORIZED=0 NODE_EXTRA_CA_CERTS=\\\"$(mkcert -CAROOT)/rootCA.pem\\\" next start -p 80\" \"local-ssl-proxy --source 443 --target 80 --key ../../certs/localhost-key.pem --cert ../../certs/localhost-cert.pem\"",
     "lint": "next lint"
   },
   "dependencies": {

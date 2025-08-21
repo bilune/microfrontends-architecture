@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 3000",
-    "dev:https": "concurrently \"next dev -p 80\" \"local-ssl-proxy --source 443 --target 80\"",
+    "dev:https": "concurrently \"next dev -p 80\" \"local-ssl-proxy --source 443 --target 80 --key ../../certs/localhost-key.pem --cert ../../certs/localhost-cert.pem\"",
+    
     "build": "next build",
     "start": "next start -p 3000",
     "lint": "next lint"

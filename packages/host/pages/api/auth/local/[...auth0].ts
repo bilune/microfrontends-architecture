@@ -7,6 +7,11 @@ import {
 
 const HOST = process.env.AUTH0_LOCAL_HOST;
 
+// Asegura AUTH0_BASE_URL en local para evitar "baseURL is not allowed to be empty"
+if (!process.env.AUTH0_BASE_URL && HOST) {
+  process.env.AUTH0_BASE_URL = HOST;
+}
+
 export default handleAuth({
   async login(req, res) {
     await handleLogin(req, res, {
